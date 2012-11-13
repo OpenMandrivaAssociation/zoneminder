@@ -1,0 +1,23 @@
+--- src/zm_utils.cpp.gcc44	2009-05-28 03:47:59.000000000 -0500
++++ src/zm_utils.cpp	2009-07-20 00:28:43.000000000 -0500
+@@ -20,7 +20,8 @@
+ //#include "zm_debug.h"
+ #include "zm_utils.h"
+ 
+-#include <stdarg.h>
++#include <cstdio>
++#include <cstdarg>
+ 
+ const std::string stringtf( const char *format, ... )
+ {
+--- src/Makefile.am.frepo       2009-04-11 02:08:57.000000000 +0100
++++ src/Makefile.am     2009-04-11 02:09:07.000000000 +0100
+@@ -1,7 +1,7 @@
+ AUTOMAKE_OPTIONS = gnu
+
+ AM_CPPFLAGS = @MYSQL_CFLAGS@ @FFMPEG_CFLAGS@ -Wall -Wno-sign-compare -fno-inline
+-AM_CXXFLAGS = -frepo
++#AM_CXXFLAGS = -frepo
+
+ CLEANFILES = *.rpo
+

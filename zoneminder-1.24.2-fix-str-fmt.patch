@@ -1,0 +1,29 @@
+--- src/zm_signal.cpp	2009-05-28 10:45:50.000000000 +0200
++++ src/zm_signal.cpp.new	2010-02-18 16:06:29.000000000 +0100
+@@ -87,7 +87,7 @@
+ 	// overwrite sigaction with caller's address
+ 	trace[1] = (void *)context.eip;
+ #elif HAVE_STRUCT_SIGCONTEXT
+-	Error( "Signal address is %p, no eip", context.cr2 );
++	Error( "Signal address is %p, no eip", "%s", context.cr2 );
+ 
+ 	trace_size = backtrace( trace, TRACE_SIZE );
+ #else // HAVE_STRUCT_SIGCONTEXT
+@@ -109,7 +109,7 @@
+ 	char **messages = backtrace_symbols( trace, trace_size );
+     if ( size_t offset = strcspn( messages[trace_size-1], " " ) )
+     {
+-        snprintf( cmd_ptr, sizeof(cmd)-(cmd_ptr-cmd), messages[trace_size-1] );
++        snprintf( cmd_ptr, sizeof(cmd)-(cmd_ptr-cmd), "%s", messages[trace_size-1] );
+         cmd_ptr += offset;
+     }
+     else
+@@ -123,7 +123,7 @@
+         cmd_ptr += snprintf( cmd_ptr, sizeof(cmd)-(cmd_ptr-cmd), " %p", trace[i] );
+     }
+ 	Info( "Backtrace complete, please execute the following command for more information" );
+-    Info( cmd );
++    Info( cmd, "%s" );
+ #endif // HAVE_DECL_BACKTRACE
+ #endif // ( HAVE_SIGINFO_T && HAVE_UCONTEXT_T ) || HAVE_STRUCT_SIGCONTEXT
+ #endif // ZM_NO_CRASHTRACE

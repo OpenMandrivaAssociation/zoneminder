@@ -1,0 +1,12 @@
+--- scripts/ZoneMinder/lib/ZoneMinder/Memory/Mapped.pm.perldep	2009-04-11 19:00:53.000000000 +0100
++++ scripts/ZoneMinder/lib/ZoneMinder/Memory/Mapped.pm	2009-04-11 19:00:29.000000000 +0100
+@@ -66,7 +66,8 @@
+ use ZoneMinder::Config qw(:all);
+ use ZoneMinder::Debug qw(:all);
+ 
+-use Sys::Mmap;
++# Remove this, we don't use it but RPM is finding it as a dependency
++# use Sys::Mmap;
+ 
+ sub zmMemKey( $ )
+ {
