@@ -11,7 +11,7 @@ Group:		Monitoring
 # jscalendar is LGPL (any version):  http://www.dynarch.com/projects/calendar/
 # Mootools is inder the MIT license: http://mootools.net/
 License:	GPLv2+ and LGPLv2+ and MIT 
-URL:		http://www.zoneminder.com/
+URL:		https://www.zoneminder.com/
 Source:		http://www.zoneminder.com/fileadmin/downloads/ZoneMinder-%{version}.tar.gz
 Source1:	http://www.charliemouse.com/code/cambozola/cambozola-0.68.tar.gz
 Source2:	zoneminder.conf
