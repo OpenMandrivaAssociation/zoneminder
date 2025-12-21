@@ -27,6 +27,9 @@ Patch6:		zoneminder-1.24.2-jpeg.patch
 Patch7:		zoneminder-1.24.2-fix-str-fmt.patch
 
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRequires:	autoconf
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
 BuildRequires:	automake gnutls-devel
 BuildRequires:	mysql-devel pcre-devel libjpeg-devel
 BuildRequires:	perl(Archive::Tar) perl(Archive::Zip)
