@@ -5,7 +5,7 @@
 
 Name:		zoneminder
 Version:	1.24.2
-Release:	%mkrel 1
+Release:	2
 Summary:	A camera monitoring and analysis tool
 Group:		Monitoring
 # jscalendar is LGPL (any version):  http://www.dynarch.com/projects/calendar/
